@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+<body>
+  <div class="background">
+    <div class="container">
+      <h1>LOGIN</h1>
+      <form [formGroup]="loginForms" action="no_action.php" (ngSubmit)="loginUser()">
+        <div class="input_box">
+          <i class='bx bxs-user'></i>
+          <input type="text" formControlName="user" placeholder="Username">
+        </div>
+        <span class="error" *ngIf="user && user.invalid && user.touched">*Please enter Username!!</span>
+        <div class="input_box">
+          <i class='bx bxs-lock-alt'></i>
+          <input type="password" formControlName="password" placeholder="Password">
+        </div>
+        <span class="error" *ngIf="password && password.invalid && password.touched">
+          *Please Enter Password!!
+        </span>
+        <div class="submit">
+          <button id="btn" type="submit" onclick="location.href='no_action.php'">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
